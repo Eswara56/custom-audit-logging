@@ -6,94 +6,80 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "audit_log")
+@Table(name = "T_EGL_LOG")
 public class AuditLog {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long LOG_ID;
+    @Column(name="LOG_DATE")
+    private LocalDateTime LOG_DATE;
+    @Column(name="FUN_NAME")
+    private String FUN_NAME;
 
-    private LocalDateTime timestamp;
+    @Column(name="DEV_MESSAGE")
+    private String DEV_MESSAGE;
+    @Column(name="USER_ID")
+    private  String USER_ID;
+    @Column(name="DB_ACTION")
+    private String DB_ACTION;
+    @Column(name="EXP_MESSAGE")
+    private String EXP_MESSAGE;
 
-    @Column(length = 10)
-    private String logLevel;
-
-    @Column(columnDefinition = "NVARCHAR(MAX)")
-    private String message;
-
-    @Column(length = 50)
-    private String threadName;
-
-    @Column(length = 255)
-    private String loggerName;
-
-    @Column(columnDefinition = "NVARCHAR(MAX)")
-    private String stackTrace;
-
-    @Column(length = 50)
-    private String appName;
-
-    public Long getId() {
-        return id;
+    public Long getLOG_ID() {
+        return LOG_ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setLOG_ID(Long LOG_ID) {
+        this.LOG_ID = LOG_ID;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
+    public LocalDateTime getLOG_DATE() {
+        return LOG_DATE;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+    public void setLOG_DATE(LocalDateTime LOG_DATE) {
+        this.LOG_DATE = LOG_DATE;
     }
 
-    public String getLogLevel() {
-        return logLevel;
+    public String getFUN_NAME() {
+        return FUN_NAME;
     }
 
-    public void setLogLevel(String logLevel) {
-        this.logLevel = logLevel;
+    public void setFUN_NAME(String FUN_NAME) {
+        this.FUN_NAME = FUN_NAME;
     }
 
-    public String getMessage() {
-        return message;
+    public String getDEV_MESSAGE() {
+        return DEV_MESSAGE;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setDEV_MESSAGE(String DEV_MESSAGE) {
+        this.DEV_MESSAGE = DEV_MESSAGE;
     }
 
-    public String getThreadName() {
-        return threadName;
+    public String getUSER_ID() {
+        return USER_ID;
     }
 
-    public void setThreadName(String threadName) {
-        this.threadName = threadName;
+    public void setUSER_ID(String USER_ID) {
+        this.USER_ID = USER_ID;
     }
 
-    public String getLoggerName() {
-        return loggerName;
+    public String getDB_ACTION() {
+        return DB_ACTION;
     }
 
-    public void setLoggerName(String loggerName) {
-        this.loggerName = loggerName;
+    public void setDB_ACTION(String DB_ACTION) {
+        this.DB_ACTION = DB_ACTION;
     }
 
-    public String getStackTrace() {
-        return stackTrace;
+    public String getEXP_MESSAGE() {
+        return EXP_MESSAGE;
     }
 
-    public void setStackTrace(String stackTrace) {
-        this.stackTrace = stackTrace;
-    }
-
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
+    public void setEXP_MESSAGE(String EXP_MESSAGE) {
+        this.EXP_MESSAGE = EXP_MESSAGE;
     }
 }

@@ -17,15 +17,18 @@ public class AuditLogService {
     }
 
     @Async
-    public void log(String appName, String level, String message, String threadName, String loggerName, String stackTrace) {
+//    public void log(String appName, String level, String message, String threadName, String loggerName, String stackTrace) {
+//        AuditLog auditLog = new AuditLog();
+////    set all entity class field her
+//    }
+    public void log( String funName, String devMessage, String userId, String dbAction, String stackTrace) {
         AuditLog auditLog = new AuditLog();
-        auditLog.setAppName(appName);
-        auditLog.setTimestamp(LocalDateTime.now());
-        auditLog.setLogLevel(level);
-        auditLog.setMessage(message);
-        auditLog.setThreadName(threadName);
-        auditLog.setLoggerName(loggerName);
-        auditLog.setStackTrace(stackTrace);
+        auditLog.setLOG_DATE(LocalDateTime.now());
+        auditLog.setFUN_NAME(funName);
+        auditLog.setDEV_MESSAGE(devMessage);
+        auditLog.setUSER_ID(userId);
+        auditLog.setDB_ACTION(dbAction);
+        auditLog.setEXP_MESSAGE(stackTrace);
         auditLogRepository.save(auditLog);
     }
 }

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.maybank</groupId>
 	<artifactId>custom-audit-logging</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>custom-audit-logging</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
