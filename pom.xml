@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.maybank</groupId>
 	<artifactId>custom-audit-logging</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<name>custom-audit-logging</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -38,12 +38,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.36</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>

@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+/**
+ * This class is used to store the detail data into Dynamic Detail Table.
+ */
 @Service
 public class AuditLogService {
 
@@ -17,18 +20,15 @@ public class AuditLogService {
     }
 
     @Async
-//    public void log(String appName, String level, String message, String threadName, String loggerName, String stackTrace) {
-//        AuditLog auditLog = new AuditLog();
-////    set all entity class field her
-//    }
-    public void log( String funName, String devMessage, String userId, String dbAction, String stackTrace) {
+    public void log( String FUN_NAME, String REP_NAME, String USER_ID, String ACTION_INFO, String ERR_EXP_MESSAGE) {
         AuditLog auditLog = new AuditLog();
-        auditLog.setLOG_DATE(LocalDateTime.now());
-        auditLog.setFUN_NAME(funName);
-        auditLog.setDEV_MESSAGE(devMessage);
-        auditLog.setUSER_ID(userId);
-        auditLog.setDB_ACTION(dbAction);
-        auditLog.setEXP_MESSAGE(stackTrace);
+        auditLog.setJOB_DATE(LocalDateTime.now());
+        auditLog.setFUN_NAME(FUN_NAME);
+        auditLog.setUSER_ID(USER_ID);
+        auditLog.setACTION_INFO(ACTION_INFO);
+        auditLog.setERR_EXP_MESSAGE(ERR_EXP_MESSAGE);
+        auditLog.setSTATUS("ERROR");
+        auditLog.setREP_NAME(REP_NAME);
         auditLogRepository.save(auditLog);
     }
 }
